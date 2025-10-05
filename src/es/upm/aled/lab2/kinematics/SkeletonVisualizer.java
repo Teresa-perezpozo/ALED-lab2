@@ -29,12 +29,17 @@ public class SkeletonVisualizer {
 	 * @param args The file containing the animation data.
 	 */
 	public static void main(String[] args) {
+		
 		// Kinematic chain definition
+		
 		// Hip (root)
 		Segment hip = new Segment(0, Math.toRadians(0));
 		// Torso
 		Segment torso = new Segment(120, Math.toRadians(-90)); // Upwards, in screen coordinates, Y is down
 		hip.addChild(torso);
+		//head
+				Segment head = new Segment(60, Math.toRadians(90));
+				torso.addChild(head);
 		// Neck
 		Segment neck = new Segment(40, Math.toRadians(0));
 		torso.addChild(neck);
