@@ -53,6 +53,7 @@ public class SkeletonVisualizer {
 		Segment rightForearm = new Segment(70, Math.toRadians(20));
 		leftUpperArm.addChild(leftForearm);
 		rightUpperArm.addChild(rightForearm);
+		
 		// Legs
 		Segment leftThigh = new Segment(100, Math.toRadians(120));
 		Segment rightThigh = new Segment(100, Math.toRadians(60));
