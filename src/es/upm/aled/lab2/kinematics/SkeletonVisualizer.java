@@ -54,11 +54,11 @@ public class SkeletonVisualizer {
 		//hand
 		Segment F1L = new Segment(20,Math.toRadians(-80));
 		leftForearm.addChild(F1L);
-		Segment F2L = new Segment(20,Math.toRadians(-40));
+		Segment F2L = new Segment(25,Math.toRadians(-40));
 		leftForearm.addChild(F2L);
-		Segment F3L = new Segment(20,Math.toRadians(0));
+		Segment F3L = new Segment(30,Math.toRadians(0));
 		leftForearm.addChild(F3L);
-		Segment F4L = new Segment(20,Math.toRadians(40));
+		Segment F4L = new Segment(25,Math.toRadians(40));
 		leftForearm.addChild(F4L);
 		Segment F5L = new Segment(20,Math.toRadians(80));
 		leftForearm.addChild(F5L);
@@ -66,11 +66,11 @@ public class SkeletonVisualizer {
 		
 		Segment F1R = new Segment(20,Math.toRadians(80));
 		rightForearm.addChild(F1R);
-		Segment F2R = new Segment(20,Math.toRadians(40));
+		Segment F2R = new Segment(25,Math.toRadians(40));
 		rightForearm.addChild(F2R);
-		Segment F3R = new Segment(20,Math.toRadians(0));
+		Segment F3R = new Segment(30,Math.toRadians(0));
 		rightForearm.addChild(F3R);
-		Segment F4R = new Segment(20,Math.toRadians(-40));
+		Segment F4R = new Segment(25,Math.toRadians(-40));
 		rightForearm.addChild(F4R);
 		Segment F5R = new Segment(20,Math.toRadians(-80));
 		rightForearm.addChild(F5R);
