@@ -37,12 +37,13 @@ public class SkeletonVisualizer {
 		// Torso
 		Segment torso = new Segment(120, Math.toRadians(-90)); // Upwards, in screen coordinates, Y is down
 		hip.addChild(torso);
-		//head
-				Segment head = new Segment(60, Math.toRadians(90));
-				torso.addChild(head);
+		
 		// Neck
 		Segment neck = new Segment(40, Math.toRadians(0));
 		torso.addChild(neck);
+		//head
+		Segment head = new Segment(60, Math.toRadians(90));
+		neck.addChild(head);
 		// Arms
 		Segment leftUpperArm = new Segment(80, Math.toRadians(90));
 		Segment rightUpperArm = new Segment(80, Math.toRadians(-90));
