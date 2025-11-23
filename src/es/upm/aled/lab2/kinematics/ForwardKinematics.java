@@ -1,5 +1,7 @@
 package es.upm.aled.lab2.kinematics;
 
+import java.awt.Graphics;
+
 import es.upm.aled.lab2.gui.Node;
 
 /**
@@ -25,13 +27,40 @@ public class ForwardKinematics {
 	 *         coordinates.
 	 */
 	// Public method: returns the root of the position tree
+	public Node n;
 	public static Node computePositions(Segment root, double originX, double originY) {
+<<<<<<< HEAD
 		return computePositions(root, originX,originY,0.0);
 		
+=======
+		
+		/*Node n = new Node(originX,originY);
+		computePositions(root, originX, originY, 0);
+		
+		return n;
+		*/    return computePositions(root, originX, originY, 0);
+
+				}
+	/*
+	 * private void drawSkeleton(Graphics g, double parentX, double parentY, Node node) {
+		// TODO: Ponga comentarios en este método
+		g.fillOval((int) node.getX() - 4, (int) node.getY() - 4, 8, 8);
+		g.drawLine((int) parentX, (int) parentY, (int) node.getX(), (int) node.getY());
+		//caso base
+		if (node.getChildren().size() == 0) {
+			return;
+		}
+		//paso recursivo
+		for (Node child : node.getChildren()) {
+			drawSkeleton(g, node.getX(), node.getY(), child);
+		}
+>>>>>>> 4c02cde9f9a5394a3b58a184ca4f0582532311cd
 	}
+	 */
 
 	// Private helper method that implements the recursive algorithm
 	private static Node computePositions(Segment link, double baseX, double baseY, double accumulatedAngle) {
+<<<<<<< HEAD
 		
 		
 	//método recursivo
@@ -58,5 +87,35 @@ public class ForwardKinematics {
 	
 	
 	
+=======
+		long startTime = System.nanoTime();
+
+		double xFinal=baseX+link.getLength()*Math.cos(accumulatedAngle+link.getAngle());
+		double yFinal=baseY+link.getLength()*Math.sin(accumulatedAngle+link.getAngle());
+		double angleFinal=accumulatedAngle+link.getAngle();
+		
+		
+		// caso base:que el segmento que analicemos no tenga hijos
+		if (link.getChildren().size()==0) {
+			Node n = new Node(xFinal, yFinal);
+			return n;
+		}
+		
+		//paso recursivo
+		
+	    Node currentNode = new Node(xFinal, yFinal);
+
+		for (Segment child : link.getChildren()) {
+			Node childNode = computePositions(child, xFinal, yFinal,angleFinal);
+	        currentNode.addChild(childNode);
+
+		}
+		long runningTime = System.nanoTime() - startTime;
+		System.out.println("Tiempo de computePositions para un segmento con "
+		+ link.getChildren().size() + " hijos: "
+		+ runningTime + " nanosegundos");
+
+		return currentNode;
+>>>>>>> 4c02cde9f9a5394a3b58a184ca4f0582532311cd
 	}
 }
